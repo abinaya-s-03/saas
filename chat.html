@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat UI – Multiple Contacts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black min-h-screen flex items-center justify-center">
+
+<div class="w-[95%] max-w-7xl h-[650px] bg-gray-950 rounded-2xl shadow-2xl flex overflow-hidden">
+
+  <!-- Sidebar -->
+  <aside class="w-1/4 bg-black border-r border-gray-800 p-4 text-white">
+
+    <!-- Profile -->
+    <div class="flex items-center gap-3 mb-6">
+      <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center font-bold text-lg">
+        A
+      </div>
+      <div>
+        <p class="font-semibold">Abinaya</p>
+        <p class="text-xs text-gray-400">Online</p>
+      </div>
+    </div>
+
+    <h3 class="text-sm text-gray-400 mb-3">Chats</h3>
+
+    <!-- Contacts -->
+    <div class="space-y-2">
+
+      <!-- Friendly Contact (Active by default) -->
+      <button onclick="openChat('chat1','Aaron Watts')" class="contact-btn w-full flex items-center gap-3 p-3 rounded-xl bg-pink-600">
+        <div class="w-10 h-10 rounded-full bg-black flex items-center justify-center">A</div>
+        Aaron Watts
+      </button>
+
+      <button onclick="openChat('chat2','Marie Nguyen')" class="contact-btn w-full flex items-center gap-3 p-3 rounded-xl hover:bg-gray-800">
+        <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">M</div>
+        Marie Nguyen
+      </button>
+
+      <button onclick="openChat('chat3','Edwin Hunter')" class="contact-btn w-full flex items-center gap-3 p-3 rounded-xl hover:bg-gray-800">
+        <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">E</div>
+        Edwin Hunter
+      </button>
+
+      <button onclick="openChat('chat4','Leo Sanders')" class="contact-btn w-full flex items-center gap-3 p-3 rounded-xl hover:bg-gray-800">
+        <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">L</div>
+        Leo Sanders
+      </button>
+
+      <button onclick="openChat('chat5','Floyd Huff')" class="contact-btn w-full flex items-center gap-3 p-3 rounded-xl hover:bg-gray-800">
+        <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">F</div>
+        Floyd Huff
+      </button>
+
+      <button onclick="openChat('chat6','Emilie Anderson')" class="contact-btn w-full flex items-center gap-3 p-3 rounded-xl hover:bg-gray-800">
+        <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">E</div>
+        Emilie Anderson
+      </button>
+
+    </div>
+  </aside>
+
+  <!-- Chat Area -->
+  <main class="flex-1 flex flex-col bg-gradient-to-br from-gray-900 to-black text-white">
+
+    <!-- Header -->
+    <div id="chatHeader" class="p-4 border-b border-gray-800 font-semibold">
+      Aaron Watts
+    </div>
+
+    <!-- Chats -->
+
+    <!-- Chat 1 – Friendly -->
+    <div id="chat1" class="chat flex-1 p-6 space-y-4 overflow-y-auto">
+      <div class="bg-gray-800 p-3 rounded-2xl max-w-md">
+        Hey Abinaya! 👋 How are you today?
+      </div>
+      <div class="flex justify-end">
+        <div class="bg-pink-600 p-3 rounded-2xl max-w-md">
+          Hi Aaron! 😊 I’m doing great, working on my UI project!
+        </div>
+      </div>
+      <div class="bg-gray-800 p-3 rounded-2xl max-w-md">
+        That’s awesome! Your designs are getting better 💖
+      </div>
+      <div class="flex justify-end">
+        <div class="bg-pink-600 p-3 rounded-2xl max-w-md">
+          Thank you so much! That means a lot 😄
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat 2 – Normal -->
+    <div id="chat2" class="chat hidden flex-1 p-6 space-y-4 overflow-y-auto">
+      <div class="bg-gray-800 p-3 rounded-2xl max-w-md">
+        Are you available for the meeting tomorrow?
+      </div>
+      <div class="flex justify-end">
+        <div class="bg-pink-600 p-3 rounded-2xl max-w-md">
+          Yes, I will be available.
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat 3 – Normal -->
+    <div id="chat3" class="chat hidden flex-1 p-6 space-y-4 overflow-y-auto">
+      <div class="bg-gray-800 p-3 rounded-2xl max-w-md">
+        Please review the updated document.
+      </div>
+      <div class="flex justify-end">
+        <div class="bg-pink-600 p-3 rounded-2xl max-w-md">
+          I will check it today.
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat 4 – Normal -->
+    <div id="chat4" class="chat hidden flex-1 p-6 space-y-4 overflow-y-auto">
+      <div class="bg-gray-800 p-3 rounded-2xl max-w-md">
+        The task has been completed.
+      </div>
+      <div class="flex justify-end">
+        <div class="bg-pink-600 p-3 rounded-2xl max-w-md">
+          Noted. Thank you.
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat 5 – Normal -->
+    <div id="chat5" class="chat hidden flex-1 p-6 space-y-4 overflow-y-auto">
+      <div class="bg-gray-800 p-3 rounded-2xl max-w-md">
+        Can you send the report?
+      </div>
+      <div class="flex justify-end">
+        <div class="bg-pink-600 p-3 rounded-2xl max-w-md">
+          I will send it shortly.
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat 6 – Normal -->
+    <div id="chat6" class="chat hidden flex-1 p-6 space-y-4 overflow-y-auto">
+      <div class="bg-gray-800 p-3 rounded-2xl max-w-md">
+        Let me know once it is ready.
+      </div>
+      <div class="flex justify-end">
+        <div class="bg-pink-600 p-3 rounded-2xl max-w-md">
+          Sure, I will update you.
+        </div>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="p-4 border-t border-gray-800 flex gap-3 bg-black">
+      <input
+        class="flex-1 bg-gray-900 px-4 py-2 rounded-full outline-none focus:ring-2 focus:ring-pink-500"
+        placeholder="Type a message..." />
+      <button class="bg-pink-600 px-5 py-2 rounded-full hover:bg-pink-700">
+        Send
+      </button>
+    </div>
+
+  </main>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function openChat(chatId, name) {
+    document.querySelectorAll('.chat').forEach(chat => chat.classList.add('hidden'));
+    document.getElementById(chatId).classList.remove('hidden');
+    document.getElementById('chatHeader').innerText = name;
+
+    document.querySelectorAll('.contact-btn').forEach(btn => {
+      btn.classList.remove('bg-pink-600');
+      btn.classList.add('hover:bg-gray-800');
+    });
+
+    event.currentTarget.classList.add('bg-pink-600');
+  }
+</script>
+
+</body>
+</html>
